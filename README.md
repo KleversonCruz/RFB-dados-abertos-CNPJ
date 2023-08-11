@@ -11,8 +11,6 @@ Layout dos arquivos: [cnpj-metadados.pdf](https://www.gov.br/receitafederal/dado
 - [.NET 7 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
 - [PostgreSQL 15](https://www.postgresql.org/download/)
 
-***
-
 ## Como Usar
 
 1. Configure as informações de conexão com o banco de dados no arquivo de configuração `appsettings.json`.
