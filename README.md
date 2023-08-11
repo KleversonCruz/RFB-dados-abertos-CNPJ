@@ -1,4 +1,4 @@
-# Extrator de Dados de CNPJ da Receita Federal Brasileira
+# Dados abertos CNPJ da Receita Federal Brasileira
 
 Este projeto consiste em uma aplicação desenvolvida em .NET 7 que tem como objetivo extrair dados públicos de CNPJs (Cadastro Nacional da Pessoa Jurídica) da Receita Federal Brasileira. A aplicação realiza o download dos arquivos disponibilizados pela Receita, extrai as informações, converte os dados para um formato adequado e os armazena em um banco de dados.
 
