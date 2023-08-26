@@ -24,7 +24,8 @@ namespace Core
                 .AddTransient(typeof(Converter<>))
                 .AddTransient<IAppInitializer, AppInitializer>()
                 .AddTransient<IAppSeeder, AppSeeder>()
-                .AddTransient<IDataExtractor, DataExtractor>();
+                .AddTransient<IDataExtractor, DataExtractor>()
+                .AddMediatR(config => config.RegisterServicesFromAssembly(assembly));
         }
     }
 }

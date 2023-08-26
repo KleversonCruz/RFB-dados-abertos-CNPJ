@@ -51,6 +51,40 @@ namespace Core.Data.Context
             }
         }
 
+        public async Task CreateIndexes(CancellationToken cancellationToken = default!)
+        {
+            try
+            {
+                logger.LogInformation("Starting the creation of indexes on database.");
+                string commandText = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data\\Scripts\\CreateIndexes.sql"));
+                await using var cmd = CreateCommand(commandText);
+                await cmd.ExecuteNonQueryAsync(cancellationToken);
+                logger.LogInformation("Indexes created successfully.");
+            }
+            catch (Exception ex)
+            {
+                logger.LogError("An error occurred while creating indexes: {message} ", ex.Message);
+                throw;
+            }
+        }
+
+        public async Task CreateViews(CancellationToken cancellationToken = default!)
+        {
+            try
+            {
+                logger.LogInformation("Starting the creation of views on database.");
+                string commandText = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data\\Scripts\\CreateViews.sql"));
+                await using var cmd = CreateCommand(commandText);
+                await cmd.ExecuteNonQueryAsync(cancellationToken);
+                logger.LogInformation("Views created successfully.");
+            }
+            catch (Exception ex)
+            {
+                logger.LogError("An error occurred while creating views: {message} ", ex.Message);
+                throw;
+            }
+        }
+
         private async Task DeleteDatabaseAsync(NpgsqlDataSource dataSource, CancellationToken cancellationToken)
         {
             try

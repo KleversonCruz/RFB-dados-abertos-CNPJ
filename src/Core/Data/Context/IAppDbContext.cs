@@ -8,6 +8,8 @@ namespace Core.Data.Context
         Task<NpgsqlConnection> CreateConnectionAsync(CancellationToken cancellationToken = default);
         Task EnsureCreateDatabaseAsync(CancellationToken cancellationToken = default);
         Task EnsureDeleteDatabaseAsync(CancellationToken cancellationToken = default);
+        Task CreateIndexes(CancellationToken cancellationToken = default);
+        Task CreateViews(CancellationToken cancellationToken = default);
         void Dispose();
         ValueTask DisposeAsync();
     }

@@ -9,20 +9,54 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "src\Core\Core.cspro
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AB8B5D78-57E8-400C-8BBB-9B75EB0828DF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinApp", "src\WinApp\WinApp.csproj", "{F102FD5E-E968-4280-9379-B75A2D9FE84A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{46D31668-475E-44C8-93BE-F4141FBD0C74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{46D31668-475E-44C8-93BE-F4141FBD0C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46D31668-475E-44C8-93BE-F4141FBD0C74}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{46D31668-475E-44C8-93BE-F4141FBD0C74}.Debug|x64.Build.0 = Debug|Any CPU
+		{46D31668-475E-44C8-93BE-F4141FBD0C74}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{46D31668-475E-44C8-93BE-F4141FBD0C74}.Debug|x86.Build.0 = Debug|Any CPU
 		{46D31668-475E-44C8-93BE-F4141FBD0C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46D31668-475E-44C8-93BE-F4141FBD0C74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46D31668-475E-44C8-93BE-F4141FBD0C74}.Release|x64.ActiveCfg = Release|Any CPU
+		{46D31668-475E-44C8-93BE-F4141FBD0C74}.Release|x64.Build.0 = Release|Any CPU
+		{46D31668-475E-44C8-93BE-F4141FBD0C74}.Release|x86.ActiveCfg = Release|Any CPU
+		{46D31668-475E-44C8-93BE-F4141FBD0C74}.Release|x86.Build.0 = Release|Any CPU
 		{06227874-F997-4EC1-8E38-19059A7436CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{06227874-F997-4EC1-8E38-19059A7436CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06227874-F997-4EC1-8E38-19059A7436CC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{06227874-F997-4EC1-8E38-19059A7436CC}.Debug|x64.Build.0 = Debug|Any CPU
+		{06227874-F997-4EC1-8E38-19059A7436CC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{06227874-F997-4EC1-8E38-19059A7436CC}.Debug|x86.Build.0 = Debug|Any CPU
 		{06227874-F997-4EC1-8E38-19059A7436CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06227874-F997-4EC1-8E38-19059A7436CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06227874-F997-4EC1-8E38-19059A7436CC}.Release|x64.ActiveCfg = Release|Any CPU
+		{06227874-F997-4EC1-8E38-19059A7436CC}.Release|x64.Build.0 = Release|Any CPU
+		{06227874-F997-4EC1-8E38-19059A7436CC}.Release|x86.ActiveCfg = Release|Any CPU
+		{06227874-F997-4EC1-8E38-19059A7436CC}.Release|x86.Build.0 = Release|Any CPU
+		{F102FD5E-E968-4280-9379-B75A2D9FE84A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F102FD5E-E968-4280-9379-B75A2D9FE84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F102FD5E-E968-4280-9379-B75A2D9FE84A}.Debug|x64.ActiveCfg = Debug|x64
+		{F102FD5E-E968-4280-9379-B75A2D9FE84A}.Debug|x64.Build.0 = Debug|x64
+		{F102FD5E-E968-4280-9379-B75A2D9FE84A}.Debug|x86.ActiveCfg = Debug|x86
+		{F102FD5E-E968-4280-9379-B75A2D9FE84A}.Debug|x86.Build.0 = Debug|x86
+		{F102FD5E-E968-4280-9379-B75A2D9FE84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F102FD5E-E968-4280-9379-B75A2D9FE84A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F102FD5E-E968-4280-9379-B75A2D9FE84A}.Release|x64.ActiveCfg = Release|x64
+		{F102FD5E-E968-4280-9379-B75A2D9FE84A}.Release|x64.Build.0 = Release|x64
+		{F102FD5E-E968-4280-9379-B75A2D9FE84A}.Release|x86.ActiveCfg = Release|x86
+		{F102FD5E-E968-4280-9379-B75A2D9FE84A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +64,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{46D31668-475E-44C8-93BE-F4141FBD0C74} = {AB8B5D78-57E8-400C-8BBB-9B75EB0828DF}
 		{06227874-F997-4EC1-8E38-19059A7436CC} = {AB8B5D78-57E8-400C-8BBB-9B75EB0828DF}
+		{F102FD5E-E968-4280-9379-B75A2D9FE84A} = {AB8B5D78-57E8-400C-8BBB-9B75EB0828DF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F24C1B5-B318-488F-9861-0446425D0BF5}

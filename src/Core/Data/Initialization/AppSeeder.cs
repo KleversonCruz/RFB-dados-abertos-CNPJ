@@ -1,4 +1,5 @@
-﻿using Core.RFB;
+﻿using Core.Data.Context;
+using Core.RFB;
 using Core.RFB.Conversion;
 using Microsoft.Extensions.Logging;
 
@@ -6,7 +7,7 @@ namespace Core.Data.Initialization
 {
     public interface IAppSeeder
     {
-        Task SeedEmpresaDatabaseAsync(CancellationToken cancellationToken = default);
+        Task SeedPartialDatabaseAsync(CancellationToken cancellationToken = default);
         Task SeedFullDatabaseAsync(CancellationToken cancellationToken);
     }
 
@@ -15,12 +16,14 @@ namespace Core.Data.Initialization
         private readonly ILogger<AppSeeder> logger;
         private readonly ConverterFactory converterFactory;
         private readonly IDataExtractor dataExtractor;
+        private readonly IAppDbContext dbContext;
 
-        public AppSeeder(ILogger<AppSeeder> logger, ConverterFactory converterFactory, IDataExtractor dataExtractor)
+        public AppSeeder(ILogger<AppSeeder> logger, ConverterFactory converterFactory, IDataExtractor dataExtractor, IAppDbContext dbContext)
         {
             this.logger = logger;
             this.converterFactory = converterFactory;
             this.dataExtractor = dataExtractor;
+            this.dbContext = dbContext;
         }
 
         public async Task SeedFullDatabaseAsync(CancellationToken cancellationToken = default!)
@@ -29,7 +32,7 @@ namespace Core.Data.Initialization
             await SeedFilesToDatabaseAsync(extractedFiles, cancellationToken);
         }
 
-        public async Task SeedEmpresaDatabaseAsync(CancellationToken cancellationToken = default!)
+        public async Task SeedPartialDatabaseAsync(CancellationToken cancellationToken = default!)
         {
             var desiredFileNames = new List<string>() { "Cnaes", "Empresas", "Estabelecimentos", "Municipios" };
             var extractedFileNames = await dataExtractor.GetPublicDataAsync(desiredFileNames, cancellationToken);
@@ -44,6 +47,8 @@ namespace Core.Data.Initialization
                 var converter = converterFactory.Create(file);
                 await converter.Convert(file, cancellationToken);
             }
+            await dbContext.CreateIndexes(cancellationToken);
+            await dbContext.CreateViews(cancellationToken);
             logger.LogInformation("Database seeding completed successfully.");
         }
     }

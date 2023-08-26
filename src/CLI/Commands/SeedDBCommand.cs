@@ -10,7 +10,7 @@ internal class SeedDBCommand
     public async Task<int> OnExecuteAsync(IAppSeeder appSeeder, CancellationToken cancellationToken)
     {
         if (Partial)
-            await appSeeder.SeedEmpresaDatabaseAsync(cancellationToken);
+            await appSeeder.SeedPartialDatabaseAsync(cancellationToken);
         else
             await appSeeder.SeedFullDatabaseAsync(cancellationToken);
 
